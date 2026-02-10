@@ -20,8 +20,8 @@ function LoginPage() {
       <div className="left">
         <div className="mock">
           <h1>SSIM</h1>
-          <p>Stationery Store Inventory Management</p>
-          <p>Manage sales, stock, and reports easily.</p>
+          <p><i><b>Stationery Store Inventory Management</b></i></p>
+          <p><i>Manage sales, stock, and reports easily.</i></p>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ function LoginPage() {
           <input
             type="text"
             className="field"
-            placeholder="Email"
+            placeholder="UserName"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
