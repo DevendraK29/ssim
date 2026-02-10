@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background: #fff;
+}
+
+/* Main layout */
+.login-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Left side (image / branding area) */
+.left {
+  flex: 1.2;
+  background: linear-gradient(135deg, #ff6a00, #ff2e00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.25),
+    transparent 60%
+  );
+}
+
+.mock {
+  text-align: center;
+  max-width: 420px;
+  z-index: 1;
+}
+
+.mock h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.mock p {
+  margin: 6px 0;
+  font-size: 16px;
+  opacity: 0.95;
+}
+
+/* Right side (login form) */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+/* Login box */
+.login-box {
+  width: 380px;
+}
+
+.login-box h2 {
+  font-size: 26px;
+  margin-bottom: 24px;
+  color: #111;
+}
+
+/* Inputs */
+.field {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  border: none;
+  background: #f3f3f3;
+  font-size: 15px;
+  outline: none;
+}
+
+.field:focus {
+  background: #ededed;
+}
+
+/* Row under inputs */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 10px 0 20px;
+  color: #555;
+}
+
+.row a {
+  text-decoration: none;
+  color: #ff6a00;
+}
+
+.row a:hover {
+  text-decoration: underline;
+}
+
+/* Login button */
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff6a00, #ff2e00);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 90, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Error message */
+.error {
+  background: #ffe6e6;
+  color: #c40000;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* Or divider */
+.or {
+  text-align: center;
+  margin: 22px 0 16px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* Social buttons */
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social button {
+  padding: 12px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.social button:hover {
+  background: #f7f7f7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Signup text */
+.signup {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #666;
+}
+
+.signup a {
+  color: #ff6a00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .left {
+    height: 220px;
+  }
+
+  .login-box {
+    width: 90%;
+    max-width: 380px;
+  }
+}
