@@ -43,12 +43,18 @@ body {
   text-align: center;
   max-width: 420px;
   z-index: 1;
+  
 }
 
 .mock h1 {
   font-size: 48px;
   margin-bottom: 10px;
   letter-spacing: 1px;
+    background: linear-gradient(90deg, #9e0010 50%, #ffea00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .mock p {

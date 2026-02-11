@@ -20,7 +20,7 @@ function LoginPage() {
       <div className="left">
         <div className="mock">
           <h1>SSIM</h1>
-          <p><i><b>Stationery Store Inventory Management</b></i></p>
+          <p><b>Stationery Store Inventory Management</b></p>
           <p><i>Manage sales, stock, and reports easily.</i></p>
         </div>
       </div>
