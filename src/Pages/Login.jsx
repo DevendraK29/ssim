@@ -1,15 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/Login.css"
 import { useState } from "react";
+
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const navigate = useNavigate()
 
   const handleLogin = () => {
     if (username === "admin" && password === "admin123") {
       alert("Login successful!");
-      // later: navigate to dashboard
+      navigate("/dashboard");
     } else {
       setError(true);
     }
