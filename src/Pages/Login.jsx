@@ -9,14 +9,43 @@ function LoginPage() {
   const [error, setError] = useState(false);
   const navigate = useNavigate()
 
-  const handleLogin = () => {
-    if (username === "admin" && password === "admin123") {
-      alert("Login successful!");
-      navigate("/dashboard");
-    } else {
+ const handleLogin = async () => {
+  setError(false);
+
+  try {
+    const response = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // Login failed
       setError(true);
+      return;
     }
-  };
+
+    // Login success
+    alert("Login successful!");
+    console.log("Logged in user:", data.user);
+
+    // You can store user info if you want (optional for now)
+    // localStorage.setItem("user", JSON.stringify(data.user));
+
+    navigate("/dashboard");
+  } catch (err) {
+    console.error("Login error:", err);
+    setError(true);
+  }
+};
+
 
   return (
     <div className="login-page">

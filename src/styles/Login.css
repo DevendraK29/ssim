@@ -18,7 +18,7 @@ body {
 /* Left side (image / branding area) */
 .left {
   flex: 1;
-  background: linear-gradient(135deg, #ff6a00, #ff2e00);
+  background: linear-gradient(135deg, #000080, #00bfff);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,7 @@ body {
   font-size: 48px;
   margin-bottom: 10px;
   letter-spacing: 1px;
-    background: linear-gradient(90deg, #9e0010 50%, #ffea00 100%);
+    background: linear-gradient(90deg, #0022ff 0%, #00ffa6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -111,7 +111,7 @@ body {
 
 .row a {
   text-decoration: none;
-  color: #ff6a00;
+  color: #1e90ff;
 }
 
 .row a:hover {
@@ -124,7 +124,7 @@ body {
   padding: 14px;
   border: none;
   border-radius: 999px;
-  background: linear-gradient(135deg, #ff6a00, #ff2e00);
+  background: linear-gradient(135deg, #1e90ff, #99badd);
   color: #fff;
   font-size: 16px;
   font-weight: 600;

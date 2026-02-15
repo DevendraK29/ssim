@@ -1,31 +1,41 @@
-import { Navigate } from "react-router-dom";
-import "../styles/Dashboard.css"
+import { useNavigate } from "react-router-dom";
+import "../styles/Dashboard.css";
 import { useState } from "react";
 
 function Dashboard() {
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false); // for mobile sidebar
+
   return (
     <div className="app">
+      {/* Top bar */}
+      <div className="topbar">
+        <button className="hamburger" onClick={() => setOpen(!open)}>
+          ☰
+        </button>
+        <input type="text" placeholder="Search products..." />
+        <div className="user">Admin</div>
+      </div>
+
       {/* Sidebar */}
-      <div className="sidebar">
+      <div className={`sidebar ${open ? "open" : ""}`}>
         <h2 className="logo">SSIM</h2>
         <ul>
-          <li className="active">Dashboard</li>
-          <li>Products</li>
-          <li>Sales</li>
-          <li>Suppliers</li>
-          <li>Reports</li>
-          <li>Settings</li>
+          <li className="active" onClick={() => { navigate("/dashboard"); setOpen(false); }}>
+            Dashboard
+          </li>
+          <li onClick={() => { navigate("/products"); setOpen(false); }}>
+            Products
+          </li>
+          <li onClick={() => setOpen(false)}>Sales</li>
+          <li onClick={() => setOpen(false)}>Suppliers</li>
+          <li onClick={() => setOpen(false)}>Reports</li>
+          <li onClick={() => setOpen(false)}>Settings</li>
         </ul>
       </div>
 
       {/* Main */}
       <div className="main">
-        {/* Top bar */}
-        <div className="topbar">
-          <input type="text" placeholder="Search products..." />
-          <div className="user">Admin</div>
-        </div>
-
         {/* Cards */}
         <div className="cards">
           <div className="card purple">

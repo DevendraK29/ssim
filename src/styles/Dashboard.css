@@ -14,11 +14,51 @@ body {
   color: white;
 }
 
+/* Topbar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #15162b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+.topbar input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.user {
+  background: #2a2d55;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
 /* Sidebar */
 .sidebar {
   width: 220px;
   background: #15162b;
-  padding: 20px;
+  padding: 80px 20px 20px; /* space for topbar */
+  transition: transform 0.3s ease;
 }
 
 .logo {
@@ -45,28 +85,7 @@ body {
 /* Main */
 .main {
   flex: 1;
-  padding: 20px;
-}
-
-/* Topbar */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.topbar input {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  width: 250px;
-}
-
-.user {
-  background: #2a2d55;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 80px 20px 20px; /* space for topbar */
 }
 
 /* Cards */
@@ -132,4 +151,29 @@ body {
 .box button:not(.secondary) {
   background: #6366f1;
   color: white;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    transform: translateX(-100%);
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .cards,
+  .content {
+    flex-direction: column;
+  }
 }
